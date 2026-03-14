@@ -4,6 +4,7 @@ namespace WeChooz.TechAssessment.Domain.Cours;
 
 public class CoursReadModel
 {
+    public int Id { get; set; }
     public string Nom { get; set; }
     public PersonneReadModel Formateur { get; set; }
     public int CapaciteMaximal { get; set; }

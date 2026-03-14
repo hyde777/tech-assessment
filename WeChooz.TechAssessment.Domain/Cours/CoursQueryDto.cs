@@ -4,6 +4,7 @@ namespace WeChooz.TechAssessment.Domain.Cours;
 
 public class CoursQueryDto
 {
+    public int Id { get; set; }
     public string Nom { get; set; }
     public string CourteDescription { get; set; }
     public string LongueDescription { get; set; }

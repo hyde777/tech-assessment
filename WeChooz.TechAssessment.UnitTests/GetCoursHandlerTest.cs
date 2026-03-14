@@ -14,6 +14,7 @@ public class GetCoursHandlerTest
     private const int CapaciteMaximal = 10;
     private const string NomFormateur = "NomFormateur";
     private const string PrenomFormateur = "PrenomFormateur";
+    private const int Id = 1;
     private readonly ICoursRepository? _coursRepository = Substitute.For<ICoursRepository>();
     private GetCoursQueryHandler _handler;
 
@@ -35,6 +36,7 @@ public class GetCoursHandlerTest
         [
             new CoursQueryDto
             {
+                Id = Id,
                 Nom = NomCours,
                 CourteDescription = CourteDescription,
                 LongueDescription = LongueDescription,
@@ -53,6 +55,7 @@ public class GetCoursHandlerTest
         {
             new CoursReadModel()
             {
+                Id = Id,
                 Nom = NomCours,
                 CourteDescription = CourteDescription,
                 LongueDescription = LongueDescription,
