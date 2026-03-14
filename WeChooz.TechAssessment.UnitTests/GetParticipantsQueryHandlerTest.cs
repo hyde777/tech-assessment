@@ -1,33 +1,42 @@
 ﻿using FluentAssertions;
 using NSubstitute;
+using WeChooz.TechAssessment.Domain.Participants;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
-public class GetParticipantsQueryHandleTest
+public class GetParticipantsQueryHandlerTest
 {
+    private const int IdPersonne = 2;
+    private const string Nom = "Nom";
+    private const string Prenom = "Prenom";
+    private const string Email = "email";
+    private const string Entreprise = "entreprise";
+    private const int IdParticipant = 3;
+
     [Fact]
     public async Task Should_return_les_participants()
     {
         var query = new GetParticipantsQuery();
         IParticipantRepository participantRepository = Substitute.For<IParticipantRepository>();
+
         var participantReadModels = new List<ParticipantReadModel>
         {
             new()
             {
-                Id = 3,
+                Id = IdParticipant,
                 Personne = new PersonneReadModel
                 {
-                    Id = 2,
-                    Nom = "Nom",
-                    Prenom = "Prenom"
+                    Id = IdPersonne,
+                    Nom = Nom,
+                    Prenom = Prenom
                 },
-                Email = "email",
-                Entreprise = "entreprise"
+                Email = Email,
+                Entreprise = Entreprise
             }
         };
         participantRepository.GetAll(Arg.Any<CancellationToken>())
             .Returns(participantReadModels);
-        var handler = new GetPaticipantsQueryHandler(participantRepository);
+        var handler = new GetParticipantsQueryHandler(participantRepository);
 
         var result = await handler.Handle(query, CancellationToken.None);
 
@@ -35,11 +44,11 @@ public class GetParticipantsQueryHandleTest
         [
             new ParticipantDto()
             {
-                Id = 3,
-                Nom = "Nom",
-                Prenom = "Prenom",
-                Email = "email",
-                Entreprise = "entreprise"
+                Id = IdParticipant,
+                Nom = Nom,
+                Prenom = Prenom,
+                Email = Email,
+                Entreprise = Entreprise
             }
         ]);
     }
