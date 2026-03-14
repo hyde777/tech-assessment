@@ -6,14 +6,21 @@ namespace WeChooz.TechAssessment.UnitTests;
 
 public class CreeCoursCommandTest
 {
+    private ICoursRepository _coursrepository = Substitute.For<ICoursRepository>();
+    private CreeCoursCommandHandler _handler;
     private const int IdCoursCreated = 4;
     private const string Nouveaucours = "NouveauCours";
     private const int CapaciteMaximal = 20;
     private const PopulationCibleEnum PopulationCibleEnum = UnitTests.PopulationCibleEnum.PresidentDeCse;
     private const string CourteDescription = "CourteDescription";
 
+    public CreeCoursCommandTest()
+    {
+        _handler = new CreeCoursCommandHandler(_coursrepository);
+    }
+
     [Fact]
-    public async Task METHOD()
+    public async Task Should_Cree_un_cours_classique()
     {
         CreeCoursCommand command = new CreeCoursCommand()
         {
@@ -22,13 +29,12 @@ public class CreeCoursCommandTest
             PopulationCibleEnum = PopulationCibleEnum,
             CapaciteMaximal = CapaciteMaximal
         };
-        ICoursRepository coursrepository = Substitute.For<ICoursRepository>();
-        CoursCreateModel createModel = new CoursCreateModel();
-        coursrepository.Add(Arg.Do<CoursCreateModel>(x => createModel = x), Arg.Any<CancellationToken>())
-            .Returns(IdCoursCreated);
-        var handler = new CreeCoursCommandHandler(coursrepository);
 
-        var result = await handler.Handle(command, CancellationToken.None);
+        CoursCreateModel createModel = new CoursCreateModel();
+        _coursrepository.Add(Arg.Do<CoursCreateModel>(x => createModel = x), Arg.Any<CancellationToken>())
+            .Returns(IdCoursCreated);
+
+        var result = await _handler.Handle(command, CancellationToken.None);
 
         createModel.Should().BeEquivalentTo(new CoursCreateModel
         {
@@ -39,36 +45,4 @@ public class CreeCoursCommandTest
         });
         result.Should().Be(IdCoursCreated);
     }
-}
-
-public class CreeCoursCommandHandler
-{
-    private readonly ICoursRepository _coursrepository;
-
-    public CreeCoursCommandHandler(ICoursRepository coursrepository)
-    {
-        _coursrepository = coursrepository;
-    }
-
-    public async Task<int> Handle(CreeCoursCommand command, CancellationToken cancellationToken)
-    {
-        var coursCreateModel = new CoursCreateModel
-        {
-            CourteDescription = command.CourteDescription,
-            CapaciteMaximal = command.CapaciteMaximal,
-            Nom = command.Nom,
-            PopulationCibleEnum = command.PopulationCibleEnum
-        };
-        var id = await _coursrepository.Add(coursCreateModel, cancellationToken);
-
-        return id;
-    }
-}
-
-public class CreeCoursCommand
-{
-    public string Nom { get; set; }
-    public string CourteDescription { get; set; }
-    public PopulationCibleEnum PopulationCibleEnum { get; set; }
-    public int CapaciteMaximal { get; set; }
 }
