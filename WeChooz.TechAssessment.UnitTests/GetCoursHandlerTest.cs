@@ -14,9 +14,9 @@ public class GetCoursHandlerTest
         {
             new CoursReadModel()
             {
-                Nom = "",
-                CourteDescription = "",
-                LongueDescription = "",
+                Nom = "NomCours",
+                CourteDescription = "CourteDescription",
+                LongueDescription = "LongueDescription",
                 Duree = 2,
                 PopulationCible = PopulationCibleEnum.Elu,
                 CapaciteMaximal = 10,
@@ -27,19 +27,19 @@ public class GetCoursHandlerTest
                 }
             }
         };
-        coursRepository.GetAll().Returns(coursReadModels);
+        coursRepository.GetAll(Arg.Any<CancellationToken>()).Returns(coursReadModels);
         var handler = new GetCoursQueryHandler(coursRepository);
         var getCoursQuery = new GetCoursQuery();
 
-        var result = await handler.Handle(getCoursQuery);
+        var result = await handler.Handle(getCoursQuery, CancellationToken.None);
 
         result.Should().BeEquivalentTo(
         [
             new CoursQueryDto
             {
-                Nom = "",
-                CourteDescription = "",
-                LongueDescription = "",
+                Nom = "NomCours",
+                CourteDescription = "CourteDescription",
+                LongueDescription = "LongueDescription",
                 Duree = 2,
                 PopulationCible = PopulationCibleEnum.Elu,
                 CapaciteMaximal = 10,

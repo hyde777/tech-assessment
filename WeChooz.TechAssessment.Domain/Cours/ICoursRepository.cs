@@ -2,5 +2,5 @@
 
 public interface ICoursRepository
 {
-    List<CoursReadModel> GetAll();
+    Task<List<CoursReadModel>> GetAll(CancellationToken cancellationToken);
 }
