@@ -1,10 +1,10 @@
 ﻿namespace WeChooz.TechAssessment.Domain.Cours;
 
-public class GetCoursQueryHandler
+public class CoursQueryHandler
 {
     private readonly ICoursRepository _coursRepository;
 
-    public GetCoursQueryHandler(ICoursRepository coursRepository)
+    public CoursQueryHandler(ICoursRepository coursRepository)
     {
         _coursRepository = coursRepository;
     }

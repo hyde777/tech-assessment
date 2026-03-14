@@ -4,7 +4,7 @@ using WeChooz.TechAssessment.Domain.Participants;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
-public class GetParticipantsQueryHandlerTest
+public class ParticipantsQueryHandlerTest
 {
     private const int IdPersonne = 2;
     private const string Nom = "Nom";
@@ -36,7 +36,7 @@ public class GetParticipantsQueryHandlerTest
         };
         participantRepository.GetAll(Arg.Any<CancellationToken>())
             .Returns(participantReadModels);
-        var handler = new GetParticipantsQueryHandler(participantRepository);
+        var handler = new ParticipantsQueryHandler(participantRepository);
 
         var result = await handler.Handle(query, CancellationToken.None);
 

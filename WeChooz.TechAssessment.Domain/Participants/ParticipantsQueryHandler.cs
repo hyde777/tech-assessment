@@ -2,11 +2,11 @@
 
 namespace WeChooz.TechAssessment.Domain.Participants;
 
-public class GetParticipantsQueryHandler
+public class ParticipantsQueryHandler
 {
     private readonly IParticipantRepository _participantRepository;
 
-    public GetParticipantsQueryHandler(IParticipantRepository participantRepository)
+    public ParticipantsQueryHandler(IParticipantRepository participantRepository)
     {
         _participantRepository = participantRepository;
     }
