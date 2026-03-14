@@ -14,6 +14,7 @@ public class GetCoursQueryHandler
         var coursReadModels = await _coursRepository.GetAll(cancellationToken);
         return coursReadModels.Select(x => new CoursQueryDto
         {
+            Id =  x.Id,
             Nom = x.Nom,
             CourteDescription = x.CourteDescription,
             LongueDescription = x.LongueDescription,
