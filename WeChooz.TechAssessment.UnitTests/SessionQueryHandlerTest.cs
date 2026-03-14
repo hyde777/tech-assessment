@@ -72,9 +72,19 @@ public class SessionQueryHandler
         _sessionRepository = sessionRepository;
     }
 
-    public Task<List<SessionReadDto>> Handle(SessionQuery sessionQuery, CancellationToken none)
+    public async Task<List<SessionReadDto>> Handle(SessionQuery query, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var sessions = await _sessionRepository.GetAll(cancellationToken);
+        return sessions.Select(x => new SessionReadDto
+        {
+            Id = x.Id,
+            DateDebutSession = x.DateDebutSession,
+            IdCours = x.IdCours,
+            IdParticipants = x.IdParticipants,
+            IdSession = x.IdSession,
+            ModeDelivrance = x.ModeDelivrance,
+            PopulationCible = x.PopulationCible
+        }).ToList();
     }
 }
 
