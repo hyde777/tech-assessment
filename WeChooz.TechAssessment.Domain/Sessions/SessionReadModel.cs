@@ -1,0 +1,14 @@
+﻿using WeChooz.TechAssessment.UnitTests;
+
+namespace WeChooz.TechAssessment.Domain.Sessions;
+
+public class SessionReadModel
+{
+    public int Id { get; set; }
+    public int IdSession { get; set; }
+    public int IdCours { get; set; }
+    public List<int> IdParticipants { get; set; }
+    public PopulationCibleEnum PopulationCible { get; set; }
+    public ModeDelivrance ModeDelivrance { get; set; }
+    public DateTime DateDebutSession { get; set; }
+}
