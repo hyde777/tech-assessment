@@ -45,6 +45,7 @@ public class ParticipantsQueryHandlerTest
             new ParticipantDto()
             {
                 Id = IdParticipant,
+                IdPersonne = IdPersonne,
                 Nom = Nom,
                 Prenom = Prenom,
                 Email = Email,

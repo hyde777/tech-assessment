@@ -18,6 +18,7 @@ public class ParticipantsQueryHandler
         return participants.Select(x => new ParticipantDto
         {
             Id = x.Id,
+            IdPersonne = x.Personne.Id,
             Nom = x.Personne.Nom,
             Prenom = x.Personne.Prenom,
             Email = x.Email,

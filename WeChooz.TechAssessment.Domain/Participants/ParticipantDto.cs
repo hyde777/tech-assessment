@@ -7,4 +7,5 @@ public class ParticipantDto
     public string Prenom { get; set; }
     public string Email { get; set; }
     public string Entreprise { get; set; }
+    public int IdPersonne { get; set; }
 }
