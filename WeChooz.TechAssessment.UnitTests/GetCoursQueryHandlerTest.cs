@@ -4,7 +4,7 @@ using WeChooz.TechAssessment.Domain.Cours;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
-public class GetCoursHandlerTest
+public class GetCoursQueryHandlerTest
 {
     private const string NomCours = "NomCours";
     private const string CourteDescription = "CourteDescription";
@@ -18,7 +18,7 @@ public class GetCoursHandlerTest
     private readonly ICoursRepository? _coursRepository = Substitute.For<ICoursRepository>();
     private GetCoursQueryHandler _handler;
 
-    public GetCoursHandlerTest()
+    public GetCoursQueryHandlerTest()
     {
         _handler = new GetCoursQueryHandler(_coursRepository);
     }
