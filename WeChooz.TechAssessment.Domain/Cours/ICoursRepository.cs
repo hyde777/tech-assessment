@@ -1,4 +1,4 @@
-﻿namespace WeChooz.TechAssessment.UnitTests;
+﻿namespace WeChooz.TechAssessment.Domain.Cours;
 
 public interface ICoursRepository
 {

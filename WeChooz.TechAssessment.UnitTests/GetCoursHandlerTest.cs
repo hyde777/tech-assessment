@@ -1,9 +1,10 @@
 ﻿using FluentAssertions;
 using NSubstitute;
+using WeChooz.TechAssessment.Domain.Cours;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
-public class UnitTest1
+public class GetCoursHandlerTest
 {
     [Fact]
     public async Task Should_Handle_return_les_cours()
