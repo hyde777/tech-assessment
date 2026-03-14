@@ -9,7 +9,7 @@ public class CoursQueryHandler
         _coursRepository = coursRepository;
     }
 
-    public async Task<List<CoursQueryDto>> Handle(GetCoursQuery getCoursQuery, CancellationToken cancellationToken)
+    public async Task<List<CoursQueryDto>> Handle(CoursQuery coursQuery, CancellationToken cancellationToken)
     {
         var coursReadModels = await _coursRepository.GetAll(cancellationToken);
         return coursReadModels.Select(x => new CoursQueryDto

@@ -16,7 +16,7 @@ public class ParticipantsQueryHandlerTest
     [Fact]
     public async Task Should_return_les_participants()
     {
-        var query = new GetParticipantsQuery();
+        var query = new ParticipantsQuery();
         IParticipantRepository participantRepository = Substitute.For<IParticipantRepository>();
 
         var participantReadModels = new List<ParticipantReadModel>

@@ -11,7 +11,7 @@ public class ParticipantsQueryHandler
         _participantRepository = participantRepository;
     }
 
-    public async Task<List<ParticipantDto>> Handle(GetParticipantsQuery query, CancellationToken cancellationToken)
+    public async Task<List<ParticipantDto>> Handle(ParticipantsQuery query, CancellationToken cancellationToken)
     {
         var participants = await _participantRepository.GetAll(cancellationToken);
 

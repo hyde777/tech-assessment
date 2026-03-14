@@ -28,7 +28,7 @@ public class CoursQueryHandlerTest
     {
         var coursReadModels = CoursReadModels();
         _coursRepository.GetAll(Arg.Any<CancellationToken>()).Returns(coursReadModels);
-        var getCoursQuery = new GetCoursQuery();
+        var getCoursQuery = new CoursQuery();
 
         var result = await _handler.Handle(getCoursQuery, CancellationToken.None);
 
