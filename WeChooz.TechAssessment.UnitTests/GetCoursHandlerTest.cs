@@ -21,6 +21,7 @@ public class GetCoursHandlerTest
     {
         _handler = new GetCoursQueryHandler(_coursRepository);
     }
+
     [Fact]
     public async Task Should_Handle_return_les_cours()
     {
