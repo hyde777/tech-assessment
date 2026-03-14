@@ -24,7 +24,7 @@ public class CreeCoursCommandTest
         };
         ICoursRepository coursrepository = Substitute.For<ICoursRepository>();
         CoursCreateModel createModel = new CoursCreateModel();
-        coursrepository.Add(Arg.Do<CoursCreateModel>(x => createModel = x))
+        coursrepository.Add(Arg.Do<CoursCreateModel>(x => createModel = x), Arg.Any<CancellationToken>())
             .Returns(IdCoursCreated);
         var handler = new CreeCoursCommandHandler(coursrepository);
 
@@ -43,14 +43,25 @@ public class CreeCoursCommandTest
 
 public class CreeCoursCommandHandler
 {
+    private readonly ICoursRepository _coursrepository;
+
     public CreeCoursCommandHandler(ICoursRepository coursrepository)
     {
-        throw new NotImplementedException();
+        _coursrepository = coursrepository;
     }
 
-    public Task<int> Handle(CreeCoursCommand command, CancellationToken none)
+    public async Task<int> Handle(CreeCoursCommand command, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var coursCreateModel = new CoursCreateModel
+        {
+            CourteDescription = command.CourteDescription,
+            CapaciteMaximal = command.CapaciteMaximal,
+            Nom = command.Nom,
+            PopulationCibleEnum = command.PopulationCibleEnum
+        };
+        var id = await _coursrepository.Add(coursCreateModel, cancellationToken);
+
+        return id;
     }
 }
 
