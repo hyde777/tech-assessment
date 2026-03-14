@@ -18,7 +18,7 @@ public class CoursQueryHandler
             Nom = x.Nom,
             CourteDescription = x.CourteDescription,
             LongueDescription = x.LongueDescription,
-            Duree = x.Duree,
+            DureeEnJours = x.DureeEnJours,
             PopulationCible = x.PopulationCible,
             CapaciteMaximal = x.CapaciteMaximal,
             NomFormateur = x.Formateur.Nom,

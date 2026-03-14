@@ -40,7 +40,7 @@ public class CoursQueryHandlerTest
                 Nom = NomCours,
                 CourteDescription = CourteDescription,
                 LongueDescription = LongueDescription,
-                Duree = Duree,
+                DureeEnJours = Duree,
                 PopulationCible = PopulationCibleEnum,
                 CapaciteMaximal = CapaciteMaximal,
                 NomFormateur = NomFormateur,
@@ -59,7 +59,7 @@ public class CoursQueryHandlerTest
                 Nom = NomCours,
                 CourteDescription = CourteDescription,
                 LongueDescription = LongueDescription,
-                Duree = Duree,
+                DureeEnJours = Duree,
                 PopulationCible = PopulationCibleEnum,
                 CapaciteMaximal = CapaciteMaximal,
                 Formateur = new PersonneReadModel

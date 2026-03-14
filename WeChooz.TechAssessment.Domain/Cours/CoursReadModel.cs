@@ -11,5 +11,5 @@ public class CoursReadModel
     public PopulationCibleEnum PopulationCible { get; set; }
     public string CourteDescription { get; set; }
     public string LongueDescription { get; set; }
-    public int Duree { get; set; }
+    public int DureeEnJours { get; set; }
 }
