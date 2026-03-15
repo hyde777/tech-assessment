@@ -1,14 +1,13 @@
 ﻿using FluentAssertions;
 using NSubstitute;
 using WeChooz.TechAssessment.Domain;
-using WeChooz.TechAssessment.Domain.Sessions;
 using WeChooz.TechAssessment.Domain.Sessions.SessionQuery;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
 public class SessionQueryHandlerTest
 {
-    private readonly ISessionRepository _sessionRepository = Substitute.For<ISessionRepository>();
+    private readonly IReadRepository<SessionReadModel> _sessionRepository = Substitute.For<IReadRepository<SessionReadModel>>();
     private SessionQueryHandler _handler;
 
     public SessionQueryHandlerTest()

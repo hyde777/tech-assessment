@@ -2,9 +2,9 @@
 
 public class SessionQueryHandler
 {
-    private readonly ISessionRepository _sessionRepository;
+    private readonly IReadRepository<SessionReadModel> _sessionRepository;
 
-    public SessionQueryHandler(ISessionRepository sessionRepository)
+    public SessionQueryHandler(IReadRepository<SessionReadModel> sessionRepository)
     {
         _sessionRepository = sessionRepository;
     }
