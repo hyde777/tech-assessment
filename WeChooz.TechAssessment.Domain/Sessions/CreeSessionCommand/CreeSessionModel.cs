@@ -1,6 +1,6 @@
 ﻿namespace WeChooz.TechAssessment.Domain.Sessions.CreeSessionCommand;
 
-public class SessionCreateModel
+public class CreeSessionModel
 {
     public int IdCours { get; set; }
     public List<int> IdParticipants { get; set; }

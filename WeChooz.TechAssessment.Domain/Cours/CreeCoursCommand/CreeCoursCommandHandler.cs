@@ -11,7 +11,7 @@ public class CreeCoursCommandHandler
 
     public async Task<int> Handle(CreeCoursCommand command, CancellationToken cancellationToken)
     {
-        var coursCreateModel = new CoursCreateModel
+        var coursCreateModel = new CreeCoursModel
         {
             CourteDescription = command.CourteDescription,
             CapaciteMaximal = command.CapaciteMaximal,

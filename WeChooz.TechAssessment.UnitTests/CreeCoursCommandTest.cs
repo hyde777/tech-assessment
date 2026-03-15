@@ -32,13 +32,13 @@ public class CreeCoursCommandTest
             CapaciteMaximal = CapaciteMaximal
         };
 
-        CoursCreateModel createModel = new CoursCreateModel();
-        _coursrepository.Add(Arg.Do<CoursCreateModel>(x => createModel = x), Arg.Any<CancellationToken>())
+        CreeCoursModel model = new CreeCoursModel();
+        _coursrepository.Add(Arg.Do<CreeCoursModel>(x => model = x), Arg.Any<CancellationToken>())
             .Returns(IdCoursCreated);
 
         var result = await _handler.Handle(command, CancellationToken.None);
 
-        createModel.Should().BeEquivalentTo(new CoursCreateModel
+        model.Should().BeEquivalentTo(new CreeCoursModel
         {
             Nom = Nouveaucours,
             CourteDescription = CourteDescription,

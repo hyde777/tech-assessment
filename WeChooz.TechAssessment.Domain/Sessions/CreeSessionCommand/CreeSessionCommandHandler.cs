@@ -1,17 +1,17 @@
 ﻿namespace WeChooz.TechAssessment.Domain.Sessions.CreeSessionCommand;
 
-public class SessionCreateCommandHandler
+public class CreeSessionCommandHandler
 {
     private readonly ISessionRepository _sessionRepository;
 
-    public SessionCreateCommandHandler(ISessionRepository sessionRepository)
+    public CreeSessionCommandHandler(ISessionRepository sessionRepository)
     {
         _sessionRepository = sessionRepository;
     }
 
-    public async Task<int> Handle(SessionCreateCommand command, CancellationToken cancellationToken)
+    public async Task<int> Handle(CreeSessionCommand command, CancellationToken cancellationToken)
     {
-        var idSession = await _sessionRepository.Add(new SessionCreateModel
+        var idSession = await _sessionRepository.Add(new CreeSessionModel
         {
             IdCours = command.IdCours,
             IdParticipants = command.IdParticipants,
