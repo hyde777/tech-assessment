@@ -2,9 +2,9 @@
 
 public class CreeCoursCommandHandler
 {
-    private readonly ICoursRepository _coursrepository;
+    private readonly ICreeRepository<CreeCoursModel> _coursrepository;
 
-    public CreeCoursCommandHandler(ICoursRepository coursrepository)
+    public CreeCoursCommandHandler(ICreeRepository<CreeCoursModel> coursrepository)
     {
         _coursrepository = coursrepository;
     }

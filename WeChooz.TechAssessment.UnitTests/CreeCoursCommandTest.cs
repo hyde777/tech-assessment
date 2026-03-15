@@ -1,14 +1,13 @@
 ﻿using FluentAssertions;
 using NSubstitute;
 using WeChooz.TechAssessment.Domain;
-using WeChooz.TechAssessment.Domain.Cours;
 using WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
 public class CreeCoursCommandTest
 {
-    private ICoursRepository _coursrepository = Substitute.For<ICoursRepository>();
+    private ICreeRepository<CreeCoursModel> _coursrepository = Substitute.For<ICreeRepository<CreeCoursModel>>();
     private CreeCoursCommandHandler _handler;
     private const int IdCoursCreated = 4;
     private const string Nouveaucours = "NouveauCours";

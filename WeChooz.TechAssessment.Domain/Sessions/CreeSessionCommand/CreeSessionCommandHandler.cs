@@ -2,9 +2,9 @@
 
 public class CreeSessionCommandHandler
 {
-    private readonly ISessionRepository _sessionRepository;
+    private readonly ICreeRepository<CreeSessionModel> _sessionRepository;
 
-    public CreeSessionCommandHandler(ISessionRepository sessionRepository)
+    public CreeSessionCommandHandler(ICreeRepository<CreeSessionModel> sessionRepository)
     {
         _sessionRepository = sessionRepository;
     }

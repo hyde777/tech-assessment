@@ -2,9 +2,9 @@
 
 public class CoursQueryHandler
 {
-    private readonly ICoursRepository _coursRepository;
+    private readonly IReadRepository<CoursReadModel> _coursRepository;
 
-    public CoursQueryHandler(ICoursRepository coursRepository)
+    public CoursQueryHandler(IReadRepository<CoursReadModel> coursRepository)
     {
         _coursRepository = coursRepository;
     }

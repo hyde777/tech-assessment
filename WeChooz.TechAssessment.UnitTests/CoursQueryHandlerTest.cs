@@ -17,7 +17,7 @@ public class CoursQueryHandlerTest
     private const string NomFormateur = "NomFormateur";
     private const string PrenomFormateur = "PrenomFormateur";
     private const int Id = 1;
-    private readonly ICoursRepository _coursRepository = Substitute.For<ICoursRepository>();
+    private readonly IReadRepository<CoursReadModel> _coursRepository = Substitute.For<IReadRepository<CoursReadModel>>();
     private CoursQueryHandler _handler;
 
     public CoursQueryHandlerTest()
