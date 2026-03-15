@@ -2,9 +2,9 @@
 
 public class CreeParticipantCommandHandler
 {
-    private readonly IParticipantRepository _participantRepository;
+    private readonly ICreeRepository<CreeParticipantModel> _participantRepository;
 
-    public CreeParticipantCommandHandler(IParticipantRepository participantRepository)
+    public CreeParticipantCommandHandler(ICreeRepository<CreeParticipantModel> participantRepository)
     {
         _participantRepository = participantRepository;
     }

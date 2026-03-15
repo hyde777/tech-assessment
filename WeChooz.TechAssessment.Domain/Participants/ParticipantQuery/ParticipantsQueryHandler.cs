@@ -2,9 +2,9 @@
 
 public class ParticipantsQueryHandler
 {
-    private readonly IParticipantRepository _participantRepository;
+    private readonly IReadRepository<ParticipantReadModel> _participantRepository;
 
-    public ParticipantsQueryHandler(IParticipantRepository participantRepository)
+    public ParticipantsQueryHandler(IReadRepository<ParticipantReadModel> participantRepository)
     {
         _participantRepository = participantRepository;
     }
