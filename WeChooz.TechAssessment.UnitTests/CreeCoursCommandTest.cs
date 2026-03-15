@@ -17,7 +17,8 @@ public class CreeCoursCommandTest
 
     public CreeCoursCommandTest()
     {
-        _handler = new CreeCoursCommandHandler(_coursrepository);
+        var creeCoursMapper = new CreeCoursMapper();
+        _handler = new CreeCoursCommandHandler(_coursrepository, creeCoursMapper);
     }
 
     [Fact]

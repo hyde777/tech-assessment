@@ -11,8 +11,3 @@ public class CreeCoursMapper : IMap<CreeCoursCommand,  CreeCoursModel>
             PopulationCibleEnum = command.PopulationCibleEnum
         };
 }
-
-public interface IMap<From, To>
-{
-    To MapFrom(From source);
-}
