@@ -11,13 +11,7 @@ public class CreeCoursCommandHandler
 
     public async Task<int> Handle(CreeCoursCommand command, CancellationToken cancellationToken)
     {
-        var coursCreateModel = new CreeCoursModel
-        {
-            CourteDescription = command.CourteDescription,
-            CapaciteMaximal = command.CapaciteMaximal,
-            Nom = command.Nom,
-            PopulationCibleEnum = command.PopulationCibleEnum
-        };
+        var coursCreateModel = new CreeCoursMapper().MapFrom(command);
         var id = await _coursrepository.Add(coursCreateModel, cancellationToken);
 
         return id;
