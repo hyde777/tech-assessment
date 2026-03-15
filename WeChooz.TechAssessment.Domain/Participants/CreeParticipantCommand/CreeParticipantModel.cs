@@ -1,4 +1,4 @@
-﻿namespace WeChooz.TechAssessment.UnitTests;
+﻿namespace WeChooz.TechAssessment.Domain.Participants.CreeParticipantCommand;
 
 public class CreeParticipantModel
 {

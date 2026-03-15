@@ -2,6 +2,7 @@
 using NSubstitute;
 using WeChooz.TechAssessment.Domain;
 using WeChooz.TechAssessment.Domain.Participants;
+using WeChooz.TechAssessment.Domain.Participants.ParticipantQuery;
 
 namespace WeChooz.TechAssessment.UnitTests;
 

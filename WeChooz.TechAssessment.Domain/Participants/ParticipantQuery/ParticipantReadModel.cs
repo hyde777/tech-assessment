@@ -1,4 +1,4 @@
-﻿namespace WeChooz.TechAssessment.Domain.Participants;
+﻿namespace WeChooz.TechAssessment.Domain.Participants.ParticipantQuery;
 
 public class ParticipantReadModel
 {

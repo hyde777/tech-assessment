@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using NSubstitute;
 using WeChooz.TechAssessment.Domain.Participants;
+using WeChooz.TechAssessment.Domain.Participants.CreeParticipantCommand;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
@@ -10,11 +11,18 @@ public class CreeParticipantsCommandHandlerTest
     private const string Email = "email";
     private const string Prenom = "Prenom";
     private const string Nom = "Nom";
-
     private const int IdNewParticipant = 8;
 
+    private readonly IParticipantRepository _participantRepository = Substitute.For<IParticipantRepository>();
+    private readonly CreeParticipantCommandHandler _handler;
+
+    public CreeParticipantsCommandHandlerTest()
+    {
+        _handler = new CreeParticipantCommandHandler(_participantRepository);
+    }
+
     [Fact]
-    public async Task METHOD()
+    public async Task Should_Cree_un_nouveau_participant()
     {
         CreeParticipantCommand command = new CreeParticipantCommand
         {
@@ -23,13 +31,11 @@ public class CreeParticipantsCommandHandlerTest
             Email = Email,
             Entreprise = Entreprise
         };
-        var participantRepository = Substitute.For<IParticipantRepository>();
         var creeParticipantModel = new CreeParticipantModel();
-        participantRepository.Add(Arg.Do<CreeParticipantModel>(x => creeParticipantModel = x), CancellationToken.None)
+        _participantRepository.Add(Arg.Do<CreeParticipantModel>(x => creeParticipantModel = x), CancellationToken.None)
             .Returns(IdNewParticipant);
-        var handler = new CreeParticipantCommandHandler(participantRepository);
 
-        var result = await handler.Handle(command, CancellationToken.None);
+        var result = await _handler.Handle(command, CancellationToken.None);
 
         result.Should().Be(IdNewParticipant);
         creeParticipantModel.Should().BeEquivalentTo(new CreeParticipantModel

@@ -1,4 +1,5 @@
-﻿using WeChooz.TechAssessment.UnitTests;
+﻿using WeChooz.TechAssessment.Domain.Participants.CreeParticipantCommand;
+using WeChooz.TechAssessment.Domain.Participants.ParticipantQuery;
 
 namespace WeChooz.TechAssessment.Domain.Participants;
 
