@@ -14,15 +14,22 @@ public class CreeParticipantsCommandHandlerTest
     private const int IdNewParticipant = 8;
 
     [Fact]
-    public void METHOD()
+    public async Task METHOD()
     {
-        CreeParticipantCommand command = new CreeParticipantCommand();
+        CreeParticipantCommand command = new CreeParticipantCommand
+        {
+            Nom = Nom,
+            Prenom = Prenom,
+            Email = Email,
+            Entreprise = Entreprise
+        };
         var participantRepository = Substitute.For<IParticipantRepository>();
         var creeParticipantModel = new CreeParticipantModel();
-        participantRepository.Add(Arg.Do<CreeParticipantModel>(x => creeParticipantModel = x), CancellationToken.None);
+        participantRepository.Add(Arg.Do<CreeParticipantModel>(x => creeParticipantModel = x), CancellationToken.None)
+            .Returns(IdNewParticipant);
         var handler = new CreeParticipantCommandHandler(participantRepository);
 
-        var result = handler.Handle(command, CancellationToken.None);
+        var result = await handler.Handle(command, CancellationToken.None);
 
         result.Should().Be(IdNewParticipant);
         creeParticipantModel.Should().BeEquivalentTo(new CreeParticipantModel
