@@ -1,6 +1,4 @@
-﻿using WeChooz.TechAssessment.UnitTests;
-
-namespace WeChooz.TechAssessment.Domain.Sessions;
+﻿namespace WeChooz.TechAssessment.Domain.Sessions;
 
 public class SessionDto
 {

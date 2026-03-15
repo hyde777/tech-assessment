@@ -1,4 +1,5 @@
-﻿using WeChooz.TechAssessment.UnitTests;
+﻿using WeChooz.TechAssessment.Domain.Cours.CoursQuery;
+using WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 
 namespace WeChooz.TechAssessment.Domain.Cours;
 

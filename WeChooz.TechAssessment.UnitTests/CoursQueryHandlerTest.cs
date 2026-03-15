@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
 using NSubstitute;
+using WeChooz.TechAssessment.Domain;
 using WeChooz.TechAssessment.Domain.Cours;
+using WeChooz.TechAssessment.Domain.Cours.CoursQuery;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
@@ -10,7 +12,7 @@ public class CoursQueryHandlerTest
     private const string CourteDescription = "CourteDescription";
     private const string LongueDescription = "LongueDescription";
     private const int Duree = 2;
-    private const PopulationCibleEnum PopulationCibleEnum = UnitTests.PopulationCibleEnum.Elu;
+    private const PopulationCibleEnum PopulationCibleEnum = Domain.PopulationCibleEnum.Elu;
     private const int CapaciteMaximal = 10;
     private const string NomFormateur = "NomFormateur";
     private const string PrenomFormateur = "PrenomFormateur";

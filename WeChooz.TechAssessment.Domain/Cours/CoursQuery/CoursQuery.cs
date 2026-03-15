@@ -1,4 +1,4 @@
-﻿namespace WeChooz.TechAssessment.Domain.Cours;
+﻿namespace WeChooz.TechAssessment.Domain.Cours.CoursQuery;
 
 public class CoursQuery
 {

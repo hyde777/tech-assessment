@@ -1,6 +1,4 @@
-﻿using WeChooz.TechAssessment.UnitTests;
-
-namespace WeChooz.TechAssessment.Domain.Participants;
+﻿namespace WeChooz.TechAssessment.Domain.Participants;
 
 public class ParticipantsQueryHandler
 {

@@ -1,6 +1,4 @@
-﻿using WeChooz.TechAssessment.UnitTests;
-
-namespace WeChooz.TechAssessment.Domain.Cours;
+﻿namespace WeChooz.TechAssessment.Domain.Cours.CoursQuery;
 
 public class CoursQueryDto
 {

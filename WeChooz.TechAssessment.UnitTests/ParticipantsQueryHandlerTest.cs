@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using NSubstitute;
+using WeChooz.TechAssessment.Domain;
 using WeChooz.TechAssessment.Domain.Participants;
 
 namespace WeChooz.TechAssessment.UnitTests;

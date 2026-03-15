@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
 using NSubstitute;
+using WeChooz.TechAssessment.Domain;
 using WeChooz.TechAssessment.Domain.Cours;
+using WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
@@ -11,7 +13,7 @@ public class CreeCoursCommandTest
     private const int IdCoursCreated = 4;
     private const string Nouveaucours = "NouveauCours";
     private const int CapaciteMaximal = 20;
-    private const PopulationCibleEnum PopulationCibleEnum = UnitTests.PopulationCibleEnum.PresidentDeCse;
+    private const PopulationCibleEnum PopulationCibleEnum = Domain.PopulationCibleEnum.PresidentDeCse;
     private const string CourteDescription = "CourteDescription";
 
     public CreeCoursCommandTest()
