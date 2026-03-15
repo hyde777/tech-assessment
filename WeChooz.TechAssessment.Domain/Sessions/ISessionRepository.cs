@@ -1,4 +1,5 @@
-﻿using WeChooz.TechAssessment.UnitTests;
+﻿using WeChooz.TechAssessment.Domain.Sessions.CreeSessionCommand;
+using WeChooz.TechAssessment.Domain.Sessions.SessionQuery;
 
 namespace WeChooz.TechAssessment.Domain.Sessions;
 

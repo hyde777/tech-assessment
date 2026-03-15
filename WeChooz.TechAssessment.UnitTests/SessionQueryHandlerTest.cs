@@ -2,6 +2,7 @@
 using NSubstitute;
 using WeChooz.TechAssessment.Domain;
 using WeChooz.TechAssessment.Domain.Sessions;
+using WeChooz.TechAssessment.Domain.Sessions.SessionQuery;
 
 namespace WeChooz.TechAssessment.UnitTests;
 

@@ -1,6 +1,4 @@
-﻿using WeChooz.TechAssessment.Domain.Sessions;
-
-namespace WeChooz.TechAssessment.UnitTests;
+﻿namespace WeChooz.TechAssessment.Domain.Sessions.CreeSessionCommand;
 
 public class SessionCreateCommandHandler
 {

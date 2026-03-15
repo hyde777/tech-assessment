@@ -1,4 +1,4 @@
-﻿namespace WeChooz.TechAssessment.Domain.Sessions;
+﻿namespace WeChooz.TechAssessment.Domain.Sessions.SessionQuery;
 
 public class SessionQuery
 {
