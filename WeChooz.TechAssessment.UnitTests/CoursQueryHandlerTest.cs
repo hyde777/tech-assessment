@@ -3,6 +3,7 @@ using NSubstitute;
 using WeChooz.TechAssessment.Domain;
 using WeChooz.TechAssessment.Domain.Cours;
 using WeChooz.TechAssessment.Domain.Cours.CoursQuery;
+using WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 
 namespace WeChooz.TechAssessment.UnitTests;
 
@@ -22,7 +23,7 @@ public class CoursQueryHandlerTest
 
     public CoursQueryHandlerTest()
     {
-        _handler = new CoursQueryHandler(_coursRepository);
+        _handler = new CoursQueryHandler(_coursRepository, new CoursQueryDtoMapper());
     }
 
     [Fact]
