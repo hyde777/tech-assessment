@@ -1,6 +1,4 @@
-﻿using WeChooz.TechAssessment.Domain.Participants.ParticipantQuery;
-
-namespace WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
+﻿namespace WeChooz.TechAssessment.Domain.Participants.ParticipantQuery;
 
 public class ParticipantDtoMapper : IMap<ParticipantReadModel,  ParticipantQueryDto>
 {

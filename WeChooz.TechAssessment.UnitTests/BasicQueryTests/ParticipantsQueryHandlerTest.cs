@@ -1,10 +1,9 @@
 ﻿using FluentAssertions;
 using NSubstitute;
 using WeChooz.TechAssessment.Domain;
-using WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 using WeChooz.TechAssessment.Domain.Participants.ParticipantQuery;
 
-namespace WeChooz.TechAssessment.UnitTests;
+namespace WeChooz.TechAssessment.UnitTests.BasicQueryTests;
 
 public class ParticipantsQueryHandlerTest
 {

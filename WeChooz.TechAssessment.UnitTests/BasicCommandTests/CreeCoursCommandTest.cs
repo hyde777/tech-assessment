@@ -3,7 +3,7 @@ using NSubstitute;
 using WeChooz.TechAssessment.Domain;
 using WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 
-namespace WeChooz.TechAssessment.UnitTests;
+namespace WeChooz.TechAssessment.UnitTests.BasicCommandTests;
 
 public class CreeCoursCommandTest
 {

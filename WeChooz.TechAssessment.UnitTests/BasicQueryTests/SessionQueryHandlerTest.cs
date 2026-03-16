@@ -1,10 +1,9 @@
 ﻿using FluentAssertions;
 using NSubstitute;
 using WeChooz.TechAssessment.Domain;
-using WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 using WeChooz.TechAssessment.Domain.Sessions.SessionQuery;
 
-namespace WeChooz.TechAssessment.UnitTests;
+namespace WeChooz.TechAssessment.UnitTests.BasicQueryTests;
 
 public class SessionQueryHandlerTest
 {

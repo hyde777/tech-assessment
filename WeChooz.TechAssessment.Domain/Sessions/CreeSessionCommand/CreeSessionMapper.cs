@@ -1,7 +1,4 @@
-﻿using WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
-using WeChooz.TechAssessment.Domain.Sessions.CreeSessionCommand;
-
-namespace WeChooz.TechAssessment.Domain.Participants.CreeParticipantCommand;
+﻿namespace WeChooz.TechAssessment.Domain.Sessions.CreeSessionCommand;
 
 public class CreeSessionMapper : IMap<CreeSessionCommand,  CreeSessionModel>
 {

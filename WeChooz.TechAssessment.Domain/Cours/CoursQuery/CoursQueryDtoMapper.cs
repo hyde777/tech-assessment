@@ -1,6 +1,4 @@
-﻿using WeChooz.TechAssessment.Domain.Cours.CoursQuery;
-
-namespace WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
+﻿namespace WeChooz.TechAssessment.Domain.Cours.CoursQuery;
 
 public class CoursQueryDtoMapper : IMap<CoursReadModel,  CoursQueryDto>
 {

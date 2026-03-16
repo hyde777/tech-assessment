@@ -1,4 +1,4 @@
-﻿namespace WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
+﻿namespace WeChooz.TechAssessment.Domain;
 
 public interface IMap<From, To>
 {
