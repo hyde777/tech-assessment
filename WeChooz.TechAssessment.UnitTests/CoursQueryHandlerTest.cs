@@ -19,11 +19,11 @@ public class CoursQueryHandlerTest
     private const string PrenomFormateur = "PrenomFormateur";
     private const int Id = 1;
     private readonly IReadRepository<CoursReadModel> _coursRepository = Substitute.For<IReadRepository<CoursReadModel>>();
-    private CoursQueryHandler _handler;
+    private readonly BasicQueryHandler<CoursQuery, CoursReadModel, CoursQueryDto> _handler;
 
     public CoursQueryHandlerTest()
     {
-        _handler = new CoursQueryHandler(_coursRepository, new CoursQueryDtoMapper());
+        _handler = new BasicQueryHandler<CoursQuery, CoursReadModel, CoursQueryDto>(_coursRepository, new CoursQueryDtoMapper());
     }
 
     [Fact]

@@ -1,6 +1,6 @@
 ﻿namespace WeChooz.TechAssessment.Domain.Sessions.SessionQuery;
 
-public class SessionDto
+public class SessionQueryDto
 {
     public int Id { get; set; }
     public int IdSession { get; set; }

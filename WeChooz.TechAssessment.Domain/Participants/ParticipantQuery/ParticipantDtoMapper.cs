@@ -2,10 +2,10 @@
 
 namespace WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 
-public class ParticipantDtoMapper : IMap<ParticipantReadModel,  ParticipantDto>
+public class ParticipantDtoMapper : IMap<ParticipantReadModel,  ParticipantQueryDto>
 {
-    public ParticipantDto MapFrom(ParticipantReadModel readModel) =>
-        new ParticipantDto
+    public ParticipantQueryDto MapFrom(ParticipantReadModel readModel) =>
+        new ParticipantQueryDto
         {
             Id = readModel.Id,
             IdPersonne = readModel.Personne.Id,

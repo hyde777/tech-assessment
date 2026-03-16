@@ -1,6 +1,6 @@
 ﻿namespace WeChooz.TechAssessment.Domain.Participants.ParticipantQuery;
 
-public class ParticipantDto
+public class ParticipantQueryDto
 {
     public int Id { get; set; }
     public string Nom { get; set; }

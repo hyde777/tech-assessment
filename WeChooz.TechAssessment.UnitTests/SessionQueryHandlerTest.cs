@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using NSubstitute;
 using WeChooz.TechAssessment.Domain;
+using WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 using WeChooz.TechAssessment.Domain.Sessions.SessionQuery;
 
 namespace WeChooz.TechAssessment.UnitTests;
@@ -8,11 +9,11 @@ namespace WeChooz.TechAssessment.UnitTests;
 public class SessionQueryHandlerTest
 {
     private readonly IReadRepository<SessionReadModel> _sessionRepository = Substitute.For<IReadRepository<SessionReadModel>>();
-    private SessionQueryHandler _handler;
+    private readonly BasicQueryHandler<SessionQuery, SessionReadModel, SessionQueryDto> _handler;
 
     public SessionQueryHandlerTest()
     {
-        _handler = new SessionQueryHandler(_sessionRepository);
+        _handler = new BasicQueryHandler<SessionQuery, SessionReadModel, SessionQueryDto>(_sessionRepository, new SessionDtoMapper());
     }
 
     [Fact]
@@ -24,7 +25,7 @@ public class SessionQueryHandlerTest
 
         handle.Should().BeEquivalentTo(
         [
-            new SessionDto
+            new SessionQueryDto
             {
                 Id = 10,
                 IdSession = 4,
