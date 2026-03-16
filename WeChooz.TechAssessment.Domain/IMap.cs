@@ -2,5 +2,5 @@
 
 public interface IMap<From, To>
 {
-    To MapFrom(From source);
+    To MapFrom(From readModel);
 }

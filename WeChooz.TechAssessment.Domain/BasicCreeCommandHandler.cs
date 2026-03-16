@@ -2,7 +2,7 @@
 
 namespace WeChooz.TechAssessment.Domain;
 
-public class BasicCreeCommandHandler<CreeCommand,CreeModel>
+public class BasicCreeCommandHandler<CreeCommand, CreeModel>
 {
     private readonly ICreeRepository<CreeModel> _coursrepository;
     private readonly IMap<CreeCommand, CreeModel> _creeCoursMapper;

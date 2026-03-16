@@ -4,17 +4,17 @@ namespace WeChooz.TechAssessment.Domain.Cours.CreeCoursCommand;
 
 public class CoursQueryDtoMapper : IMap<CoursReadModel,  CoursQueryDto>
 {
-    public CoursQueryDto MapFrom(CoursReadModel models) =>
+    public CoursQueryDto MapFrom(CoursReadModel readModel) =>
         new()
         {
-            Id =  models.Id,
-            Nom = models.Nom,
-            CourteDescription = models.CourteDescription,
-            LongueDescription = models.LongueDescription,
-            DureeEnJours = models.DureeEnJours,
-            PopulationCible = models.PopulationCible,
-            CapaciteMaximal = models.CapaciteMaximal,
-            NomFormateur = models.Formateur.Nom,
-            PrenomFormateur = models.Formateur.Prenom
+            Id =  readModel.Id,
+            Nom = readModel.Nom,
+            CourteDescription = readModel.CourteDescription,
+            LongueDescription = readModel.LongueDescription,
+            DureeEnJours = readModel.DureeEnJours,
+            PopulationCible = readModel.PopulationCible,
+            CapaciteMaximal = readModel.CapaciteMaximal,
+            NomFormateur = readModel.Formateur.Nom,
+            PrenomFormateur = readModel.Formateur.Prenom
         };
 }

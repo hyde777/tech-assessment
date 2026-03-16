@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using NSubstitute;
 using WeChooz.TechAssessment.Domain;
+using WeChooz.TechAssessment.Domain.Participants.CreeParticipantCommand;
 using WeChooz.TechAssessment.Domain.Sessions.CreeSessionCommand;
 
 namespace WeChooz.TechAssessment.UnitTests;
@@ -9,13 +10,13 @@ public class CreeSessionCommandHandlerTest
 {
     private readonly List<int> _idParticipants = [4, 5, 6];
     private readonly ICreeRepository<CreeSessionModel> _sessionRepository = Substitute.For<ICreeRepository<CreeSessionModel>>();
-    private readonly CreeSessionCommandHandler _handler;
+    private readonly BasicCreeCommandHandler<CreeSessionCommand, CreeSessionModel> _handler;
     private const int IdSessionCree = 5;
     private const int IdCours = 7;
 
     public CreeSessionCommandHandlerTest()
     {
-        _handler = new CreeSessionCommandHandler(_sessionRepository);
+        _handler = new BasicCreeCommandHandler<CreeSessionCommand, CreeSessionModel>(_sessionRepository, new CreeSessionMapper());
     }
 
     [Fact]

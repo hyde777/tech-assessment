@@ -8,7 +8,7 @@ namespace WeChooz.TechAssessment.UnitTests;
 public class CreeCoursCommandTest
 {
     private ICreeRepository<CreeCoursModel> _coursrepository = Substitute.For<ICreeRepository<CreeCoursModel>>();
-    private CreeCoursCommandHandler _handler;
+    private BasicCreeCommandHandler<CreeCoursCommand, CreeCoursModel> _handler;
     private const int IdCoursCreated = 4;
     private const string Nouveaucours = "NouveauCours";
     private const int CapaciteMaximal = 20;
@@ -18,7 +18,7 @@ public class CreeCoursCommandTest
     public CreeCoursCommandTest()
     {
         var creeCoursMapper = new CreeCoursMapper();
-        _handler = new CreeCoursCommandHandler(_coursrepository, creeCoursMapper);
+        _handler = new BasicCreeCommandHandler<CreeCoursCommand, CreeCoursModel>(_coursrepository, creeCoursMapper);
     }
 
     [Fact]

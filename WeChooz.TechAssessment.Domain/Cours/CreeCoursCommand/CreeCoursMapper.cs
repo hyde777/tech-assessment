@@ -2,12 +2,12 @@
 
 public class CreeCoursMapper : IMap<CreeCoursCommand,  CreeCoursModel>
 {
-    public CreeCoursModel MapFrom(CreeCoursCommand command) =>
+    public CreeCoursModel MapFrom(CreeCoursCommand readModel) =>
         new()
         {
-            CourteDescription = command.CourteDescription,
-            CapaciteMaximal = command.CapaciteMaximal,
-            Nom = command.Nom,
-            PopulationCibleEnum = command.PopulationCibleEnum
+            CourteDescription = readModel.CourteDescription,
+            CapaciteMaximal = readModel.CapaciteMaximal,
+            Nom = readModel.Nom,
+            PopulationCibleEnum = readModel.PopulationCibleEnum
         };
 }
